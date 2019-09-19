@@ -1,0 +1,61 @@
+<!-- 
+Author:
+Erik Benke 07-04-2017
+Description: 
+Accordion Collapsible Section that pulls in list data via SP REST API.  Designed for use in SharePoint via a 
+Content Editor Web Part on a page.  
+Note that this type of JavaScript injection approach is becoming obsolete & will only work in On-Prem enviornments
+and Classic Sites within SharePoint online. 
+For implementation:  
+1) Update paths for the jQuery, jQueryUI and CSS files as appropriate for your environment
+2) Update "ListName" in var sEndPoint with he actual name of your source list. 
+-->
+<script type="text/javascript" src="../SiteAssets/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../SiteAssets/jQueryUI/jquery-ui-1.12.1.custom.min.js"></script> 
+<link  type="text/css" rel="stylesheet" href="../SiteAssets/jQueryUI/css/jquery-ui-1.12.1.custom.min.css" /> 
+
+<div id="accordion"></div>
+
+<script language="JavaScript"> {
+    // Executes when page loads: single function to get list items and insert in JQueryUI accordion widget
+    $(document).ready(function() {
+        GetMyListItems();
+    });
+
+    function GetMyListItems() {
+        // gets base URL for the site & append REST API and make call to retrieve items from a SharePoint List
+        var sEndPoint  = _spPageContextInfo.webAbsoluteUrl;
+            sEndPoint += "/_api/web/lists/getbytitle('ListName')/items";
+
+        var call = $.ajax({
+            url: sEndPoint,
+            async: true,
+            method: "GET",
+            headers : { "accept" : "application/json;odata=verbose" }
+        });
+
+        call.done(function (data, textStatus, jqXHR){
+            var accordionHTML = "";
+            
+            // loop through items returned & build HTML from List item results
+            $.each(data.d.results, function(key, item){
+                accordionHTML += "<h3>" + item.Title + "</h3>";
+                accordionHTML += "<div>" + item.Content + "</div>"
+            });
+
+            accordionHTML += "</div>";
+
+            // insert HTML string into the <div> & initialize Accordion JQueryUI widget
+            $("#accordion").html(accordionHTML);
+            $("#accordion").accordion({
+                autoHeight: false,
+                collapsible: true
+            });
+        });
+        
+        call.fail(function(jqXHR, textStatus, errorThrown){
+            console.log(errorThrown);
+        });
+    }
+}
+</script>
