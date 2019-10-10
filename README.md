@@ -16,11 +16,14 @@ Collapsible Accordion Section designed to be added to SharePoint page using a CE
 * SharePoint 2016
 * Office 365 SharePoint (Classic Sites only) - not recommended, however.  Please see [my SharePoint Framework solution](https://github.com/ejbenke/SPFx-React-Accordion-Section)
 
+
+
 ## Solution
 
 Solution|Author(s)
 --------|---------
 jQuery Collapsible Accordion Section|Erik Benke
+
 
 
 ## Version history
@@ -31,7 +34,8 @@ Version|Date|Comments
 1.1|September 19, 2019|Minor updates, adding to Github
 
 
-### Using the code
+
+## Using the code
 
 **1) Create or use a list with a Title and a Content column:**
 * The value in the Title column for each item will appear in the heading bars of the Accordion.  
@@ -46,9 +50,9 @@ Version|Date|Comments
 * Edit the following line of code (line 28) in ClassicAccordion,html to replace "ListName" with the actual name of your list that you want to use to populate the Accordion Section:
 `sEndPoint += "/_api/web/lists/getbytitle('ListName')/items";`
 * In ClassicAccordion.html, either edit the paths in the first 3 lines or make sure you mirror the folder structure specified within your Site Assets folder on your site.
-* Add your modified ClassicAccordion.html file to Site Assets  
-* Add jQuery library, jquery.min.js (not included in this repo) to Site Assets
-* Add my custom jQueryUI library and associated css (or generate your own and use those instead) to Site Assets
+* Add your modified ClassicAccordion.html file to your Site Assets  
+* Add jQuery library, jquery.min.js (not included in this repo) to your Site Assets. [Download jQuery](https://jquery.com/download/)
+* Add my custom jQueryUI library and associated css (or generate your own and use those instead: [jQueryUI download builder](https://jqueryui.com/download/)) to your Site Assets
 
 
 ![Add your code to Site Assets](./assets/FilesInSiteAssets.png)
