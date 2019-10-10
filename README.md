@@ -44,7 +44,7 @@ Version|Date|Comments
 * The value in the Content column for each item will appear in the collapsible content section of the Accordion    
 
 
-
+&nbsp;
 ![Create list for use with the Accordion](./assets/ListForAccordion.png)
 
 &nbsp;
@@ -56,14 +56,14 @@ Version|Date|Comments
 * Add jQuery library, jquery.min.js (not included in this repo) to your Site Assets. [Download jQuery](https://jquery.com/download/)
 * Add my custom jQueryUI library and associated css (or generate your own and use those instead: [jQueryUI download builder](https://jqueryui.com/download/)) to your Site Assets
 
-
+&nbsp;
 ![Add your code to Site Assets](./assets/FilesInSiteAssets.png)
 
 &nbsp;
 **3) Add a Content Editor Web Part (CEWP) to your page:**
 
 
-
+&nbsp;
 ![Add a Content Editor Web Part](./assets/AddCEWP.png)
 
 &nbsp;
@@ -71,5 +71,5 @@ Version|Date|Comments
 * Choose Edit Web Part and then within the Content Link field add the path of your entry file for your code:
 Example of a full path: */sites/ClassicAccordion/SiteAssets/ClassicAccordion.html*
 
-
+&nbsp;
 ![Configure Content Editor Web Part](./assets/EditCEWP.png)
