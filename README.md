@@ -14,7 +14,7 @@ Collapsible Accordion Section designed to be added to SharePoint page using a CE
 
 * SharePoint 2013
 * SharePoint 2016
-* Office 365 SharePoint (Classic Sites only) - not recommended, however.  Please see ![my SharePoint Framework solution](https://github.com/ejbenke/SPFx-React-Accordion-Section)
+* Office 365 SharePoint (Classic Sites only) - not recommended, however.  Please see [my SharePoint Framework solution](https://github.com/ejbenke/SPFx-React-Accordion-Section)
 
 ## Solution
 
@@ -42,7 +42,12 @@ Version|Date|Comments
 ![Create list for use with the Accordion](./assets/ListForAccordion.png)
 
 **2) Add the .html file, jQuery library, jQueryUI library and css to your Site Assets folder on your site**  
-
+*Edit the following line of code (line 28) in ClassicAccordion,html to replace "ListName" with the actual name of your list that you want to use to populate the Accordion Section:
+`sEndPoint += "/_api/web/lists/getbytitle('ListName')/items";`
+*In ClassicAccordion.html, either edit the paths in the first 3 lines or make sure you mirror the folder structure specified within your Site Assets folder on your site.
+*Add your modified ClassicAccordion.html file to Site Assets  
+*Add jQuery library, jquery.min.js (not included in this repo) to Site Assets
+*Add my custom jQueryUI library and associated css (or generate your own and use those instead) to Site Assets
 
 
 ![Add your code to Site Assets](./assets/FilesInSiteAssets.png)
@@ -54,8 +59,8 @@ Version|Date|Comments
 ![Add a Content Editor Web Part](./assets/AddCEWP.png)
 
 **4) Configure the Content Editor Web Part (CEWP) to point to the code entry file:**
-Choose Edit Web Part and then within the Content Link field add the path of your entry file for your code:
-Example of a full path: /sites/ClassicAccordion/SiteAssets/ClassicAccordion.html
+*Choose Edit Web Part and then within the Content Link field add the path of your entry file for your code:
+Example of a full path: */sites/ClassicAccordion/SiteAssets/ClassicAccordion.html*
 
 
 ![Configure Content Editor Web Part](./assets/EditCEWP.png)
