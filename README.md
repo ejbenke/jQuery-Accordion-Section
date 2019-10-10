@@ -1,7 +1,7 @@
 # jQuery Accordion Section
 Collapsible Accordion Section designed to be added to SharePoint page using a CEWP (Content Editor Web Part) in order to display list data in accordion format
 
-<br/>
+&nbsp;
 ## SPFx Collapsible Accordion Section web part
 
 * Adds a collapsible accordion to a page.
@@ -10,7 +10,7 @@ Collapsible Accordion Section designed to be added to SharePoint page using a CE
 
 ![jQuery Accordion Example](./assets/jQueryAccordion.png)
 
-<br/>
+<br />
 ## Applies to
 
 * SharePoint 2013
